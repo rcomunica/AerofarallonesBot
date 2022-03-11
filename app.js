@@ -123,24 +123,6 @@ const { MessageActionRow, MessageButton } = require('discord.js');
         message.channel.send({ content: null, ephemeral: true, embeds: [Prueba], components: [row] });
     }
     
-});
-
-
-client.on('messageCreate', (message) =>{
-
-        
-    if(message.channel.type === 'dm') return;
-    if(message.author.bot) return
-
-    let prefix = "af/"
-
-     if(!message.content.startsWith(prefix)) return;
-
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLocaleLowerCase()
-
-
-
     if(command === '1','2','3'){
         const PlayAudio = new discord.MessageEmbed()
         .setAuthor({ name: client.user.username, iconURL: client.user.avatarURL()})
@@ -148,8 +130,9 @@ client.on('messageCreate', (message) =>{
         .setColor('#4080ee')
         message.channel.send({ embeds: [PlayAudio] }); 
     }
-    
+
 });
+
 
     
 
