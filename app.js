@@ -3,11 +3,13 @@ const discord = require('discord.js');
 const intents = new discord.Intents(32767);
 const client = new discord.Client(( { intents }));
 const Voice = require('@discordjs/voice')
-const config = require('./config.json');
+const config = require('./jsconfig.json');
 const { joinVoiceChannel } = require('@discordjs/voice');
+const FFmepg = require('ffmpeg')
 
+const { generateDependencyReport } = require('@discordjs/voice');
 
-
+console.log(generateDependencyReport());
 
 
 
@@ -58,6 +60,7 @@ client.on('messageCreate', async (message) =>{
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLocaleLowerCase()
     
+    //voz 1
 
     if(command === '1'){
         const PlayinEmbed = new discord.MessageEmbed()       
@@ -69,8 +72,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '910658096433627169',
-            guildId: '910658095598927913',
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -78,7 +81,36 @@ client.on('messageCreate', async (message) =>{
         const path = require("path")
         const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
 
-        const resource = createAudioResource(require("path").join(__dirname, 'ready.mp3'))
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/A_usted_que_le_importa.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    //VOZ 2 
+
+    if(command === '2'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Abra_una_bolsita_de_hielo.ogg'))
         const player = createAudioPlayer()
         connection.subscribe(player);
         player.play(resource);
@@ -88,7 +120,627 @@ client.on('messageCreate', async (message) =>{
 
 
 
+    if(command === '3'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
 
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Agrarrense_porque_se_viene_desorden.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '4'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Avise_si_le_gusto.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === 'bucaros'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/BUCAROS_BUCAROS.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+
+    if(command === '5'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Buenos_dias_amigito.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+
+    if(command === '6'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Cual_es_la_groceria.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '7'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Cual_es_su_risa.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '8'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Hay_no.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '9'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Hijole_no_se_va_a_poder.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '10'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Hola_micky.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '11'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/mamerto_ouuh.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '12'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Martin_care_verga.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '13'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Mas_mentiroso.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '14'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Pero_de_que_habla_usted.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '15'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Pero_que_monda.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+    if(command === '16'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Porque_tan_perdida.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '17'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Prepare_esas_tapas.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === 'elniño'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Que_le_hicieron_al_niño.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '18'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Que_putas_es_eso.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === 'siuu'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Siuuuu.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '19'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Todos_peresolos.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '20'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Vaya_y_coma_mierda.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '21'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Y_cual_es_la_hpta_monta.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
+
+    if(command === '22'){
+        const PlayinEmbed = new discord.MessageEmbed()       
+            .setColor('#4080ee')
+            .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+            .setDescription('Iniciando a reproducir un audio')
+            .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+        
+        
+        const connection = joinVoiceChannel({
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Yo_que_no_creo.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+
+    }
 
     if(command === "join"){      
        const JoinEmbed = new discord.MessageEmbed()
@@ -98,8 +750,8 @@ client.on('messageCreate', async (message) =>{
         
 
         const connection = joinVoiceChannel({
-            channelId: '910658096433627169',
-            guildId: '910658095598927913',
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -108,6 +760,14 @@ client.on('messageCreate', async (message) =>{
         connection.on(VoiceConnectionStatus.Ready, () => {
             console.log('Voz en altitud crucero - listo a catering!');
         });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'ready.mp3'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
 
         message.channel.send({ embeds: [JoinEmbed] });   
     }
@@ -121,8 +781,8 @@ client.on('messageCreate', async (message) =>{
         .setAuthor({ name: client.user.username, iconURL: client.user.avatarURL()});
 
         const connection = joinVoiceChannel({
-            channelId: '910658096433627169',
-            guildId: '910658095598927913',
+            channelId: '740404108485460041',
+            guildId: '514253726458839071',
             adapterCreator: message.guild.voiceAdapterCreator,
         });
 
@@ -421,7 +1081,9 @@ client.on('interactionCreate', interaction =>{
         if(interaction.customId === 'Pagina4_Audios'){
             interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios4], components: [ButtonsReactAudios4Pag] })
         }   
-        
+        if(interaction.customId === 'Pagina5_Audios'){
+            interaction.reply({content: null, ephemeral: true, embeds: [HelpEmbedAudios5], components: [ButtonsReactAudios5Pag] })
+        }
         if(interaction.customId === 'Pagina5_AudiosReturn'){
             interaction.reply({content: null, ephemeral: true, embeds: [HelpEmbedAudios3], components: [ButtonsReactAudios3Pag]})
         }
