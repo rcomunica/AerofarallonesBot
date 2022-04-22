@@ -1,4 +1,3 @@
-
 const discord = require('discord.js');
 const intents = new discord.Intents(32767);
 const client = new discord.Client(( { intents }));
@@ -1065,7 +1064,7 @@ client.on('interactionCreate', interaction =>{
 
         // Segunda pagina
         if(interaction.customId === 'Pagina2_Audios'){
-             interaction.reply({ content: null, ephemeral: false, embeds: [HelpEmbedAudios2], components: [ButtonsReactAudios2Pag]}) 
+             interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios2], components: [ButtonsReactAudios2Pag]}) 
             }
         if(interaction.customId === 'Pagina3_AudiosReturn'){
             interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios], components: [ButtonsReactAudios]}) 
@@ -1111,5 +1110,3 @@ client.login(config.token)
 //    |   |  \
 //    |   |   \
 //    |___|____\
-
-
