@@ -1065,7 +1065,7 @@ client.on('interactionCreate', interaction =>{
 
         // Segunda pagina
         if(interaction.customId === 'Pagina2_Audios'){
-             interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios2], components: [ButtonsReactAudios2Pag]}) 
+             interaction.reply({ content: null, ephemeral: false, embeds: [HelpEmbedAudios2], components: [ButtonsReactAudios2Pag]}) 
             }
         if(interaction.customId === 'Pagina3_AudiosReturn'){
             interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios], components: [ButtonsReactAudios]}) 
