@@ -2,7 +2,7 @@ const discord = require('discord.js');
 const intents = new discord.Intents(32767);
 const client = new discord.Client(( { intents }));
 const Voice = require('@discordjs/voice')
-const config = require('./jsconfig.json');
+const config = require('./jsconfig.json')
 const { joinVoiceChannel } = require('@discordjs/voice');
 const FFmepg = require('ffmpeg')
 
@@ -15,8 +15,8 @@ console.log(generateDependencyReport());
 
 function presence(){
     client.user.setPresence({
-        activities: [{name: 'AeroFarallones', type: 'WATCHING'}],
-        status: 'online'  // 'dnd' 'online' 'invisible' 'idle'
+        activities: [{name: 'a hacer la V2.0', type: 'PLAYING'}],
+        status: 'dnd'  // 'dnd' 'online' 'invisible' 'idle'
           
     });
     
@@ -28,8 +28,6 @@ client.on('ready', () =>{
     presence();
     
 })
-
-
 
 
 
@@ -45,6 +43,21 @@ client.on('messageCreate', async (message) => {
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLocaleLowerCase()
+
+
+    if(command === "update"){
+        const UpdateEmbed = new discord.MessageEmbed()
+        .setAuthor({ name: message.author.username, iconURL: message.author.avatarURL()})
+        .setColor('#e30')
+        .setDescription('**LA ACTUALIZACION 2.0 HA LLEGADO!**')
+        .setFields(
+            {name: "Nuevos audios!", value: `para ser mas especificos llevamos ahora **${config.audios}**` },
+            {name: "Poder unirse a cualquier canal!",value: "Cansado de que solo se pudiera reproducir en solo un VC? _AHORA SE PUEDEN EN TODOS!_"},
+        )
+        .setThumbnail(`${client.user.avatarURL()}`)
+
+        message.channel.send({embeds: [UpdateEmbed], content: null})
+    }
 
 })
 
@@ -71,8 +84,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -100,8 +113,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -129,8 +142,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -156,8 +169,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -183,8 +196,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -211,8 +224,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -239,8 +252,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -266,8 +279,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -293,8 +306,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -320,8 +333,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -347,8 +360,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -374,8 +387,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -401,8 +414,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -428,8 +441,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -455,8 +468,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -482,8 +495,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -508,8 +521,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -535,8 +548,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -562,8 +575,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -589,8 +602,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -616,8 +629,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -643,8 +656,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -670,8 +683,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -697,8 +710,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -724,8 +737,8 @@ client.on('messageCreate', async (message) =>{
         
         
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -741,6 +754,258 @@ client.on('messageCreate', async (message) =>{
 
     }
 
+    if(command === "23"){
+        const PlayinEmbed = new discord.MessageEmbed()       
+        .setColor('#4080ee')
+        .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+        .setDescription('Iniciando a reproducir un audio')
+        .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+
+        const connection = joinVoiceChannel({
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/No_venga_con_sus.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+    }
+    if(command === "24"){
+        const PlayinEmbed = new discord.MessageEmbed()       
+        .setColor('#4080ee')
+        .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+        .setDescription('Iniciando a reproducir un audio')
+        .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+
+        const connection = joinVoiceChannel({
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Compañero.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+    }
+
+    if(command === "25"){
+        const PlayinEmbed = new discord.MessageEmbed()       
+        .setColor('#4080ee')
+        .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+        .setDescription('Iniciando a reproducir un audio')
+        .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+
+        const connection = joinVoiceChannel({
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Marlon_loca.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+    }
+    if(command === "26"){
+        const PlayinEmbed = new discord.MessageEmbed()       
+        .setColor('#4080ee')
+        .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+        .setDescription('Iniciando a reproducir un audio')
+        .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+
+        const connection = joinVoiceChannel({
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/astrofo.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+    }
+    if(command === "27"){
+        const PlayinEmbed = new discord.MessageEmbed()       
+        .setColor('#4080ee')
+        .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+        .setDescription('Iniciando a reproducir un audio')
+        .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+
+        const connection = joinVoiceChannel({
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Mamerto_es_estupido.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+    }
+    if(command === "28"){
+        const PlayinEmbed = new discord.MessageEmbed()       
+        .setColor('#4080ee')
+        .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+        .setDescription('Iniciando a reproducir un audio')
+        .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+
+        const connection = joinVoiceChannel({
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/EL_niño_de_medallo.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+    }
+
+    if(command === "29"){
+        const PlayinEmbed = new discord.MessageEmbed()       
+        .setColor('#4080ee')
+        .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+        .setDescription('Iniciando a reproducir un audio')
+        .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+
+        const connection = joinVoiceChannel({
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/nonono.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+    }
+    if(command === "30"){
+        const PlayinEmbed = new discord.MessageEmbed()       
+        .setColor('#4080ee')
+        .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+        .setDescription('Iniciando a reproducir un audio')
+        .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+
+        const connection = joinVoiceChannel({
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Esooo.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+    }
+    if(command === "31"){
+        const PlayinEmbed = new discord.MessageEmbed()       
+        .setColor('#4080ee')
+        .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+        .setDescription('Iniciando a reproducir un audio')
+        .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+
+        const connection = joinVoiceChannel({
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Miguelo_discord.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+    }
+
+    if(command === "32"){
+        const PlayinEmbed = new discord.MessageEmbed()       
+        .setColor('#4080ee')
+        .setAuthor({ iconURL: client.user.avatarURL(), name: client.user.username})
+        .setDescription('Iniciando a reproducir un audio')
+        .setURL('https://www.aerofarallones.com')
+        message.channel.send({ content: null, embeds: [PlayinEmbed]}) 
+
+        const connection = joinVoiceChannel({
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
+            adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
+        });
+
+        const path = require("path")
+        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
+
+        const resource = createAudioResource(require("path").join(__dirname, 'assets/AUDIO/Jajaja_sarcasmo.ogg'))
+        const player = createAudioPlayer()
+        connection.subscribe(player);
+        player.play(resource);
+
+    }
+
+
+
+    /*
+
+    JOIN, LEAVE, STOP Y COMMANDS 
+
+    */
+
     if(command === "join"){      
        const JoinEmbed = new discord.MessageEmbed()
         .setColor('#4080ee')
@@ -749,8 +1014,8 @@ client.on('messageCreate', async (message) =>{
         
 
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
             selfDeaf: true,
         });
@@ -759,14 +1024,6 @@ client.on('messageCreate', async (message) =>{
         connection.on(VoiceConnectionStatus.Ready, () => {
             console.log('Voz en altitud crucero - listo a catering!');
         });
-
-        const path = require("path")
-        const { createAudioPlayer, createAudioResource } = require('@discordjs/voice');
-
-        const resource = createAudioResource(require("path").join(__dirname, 'ready.mp3'))
-        const player = createAudioPlayer()
-        connection.subscribe(player);
-        player.play(resource);
 
         message.channel.send({ embeds: [JoinEmbed] });   
     }
@@ -780,9 +1037,10 @@ client.on('messageCreate', async (message) =>{
         .setAuthor({ name: client.user.username, iconURL: client.user.avatarURL()});
 
         const connection = joinVoiceChannel({
-            channelId: '740404108485460041',
-            guildId: '514253726458839071',
+            channelId: message.member.voice.channelId,
+            guildId: message.guild.id,
             adapterCreator: message.guild.voiceAdapterCreator,
+            selfDeaf: true,
         });
 
         connection.destroy()
@@ -822,7 +1080,6 @@ client.on('messageCreate', async (message) =>{
 
 
         //Botón de reaccion 
-
         const ButtonsReact = new discord.MessageActionRow()
             .addComponents(
                 new discord.MessageButton()
@@ -843,9 +1100,10 @@ client.on('messageCreate', async (message) =>{
                 .setStyle('SUCCESS')
 
             )
+
         message.channel.send({ embeds: [HelpEmbed], components: [ButtonsReact]})
 
-
+            
 
             
     }
@@ -867,6 +1125,17 @@ client.on('messageCreate', async (message) =>{
 
 
 });
+
+const ButtonsReact2 = new discord.MessageActionRow()
+
+.addComponents(
+   new discord.MessageButton()
+   .setCustomId('Prueba2')
+   .setLabel('to pag 2')
+   .setStyle('SECONDARY') 
+)
+
+
 
 
 
@@ -972,9 +1241,34 @@ client.on('messageCreate', async (message) =>{
     )
     .setThumbnail(`https://cdn.discordapp.com/avatars/948807795795447868/096cc651df18ff4f4336fddcf7f3da12.webp`)
 
+    const HelpEmbedAudios6 = new discord.MessageEmbed()
+    .setColor('#4080ee')
+    .setTitle('Audios Pagina 6')
+    .setFields(
+        {name: 'No venga con sus', value: 'af/23'},
+        {name: 'Compañero', value: 'af/24'},
+        {name: 'Marlon loca', value: 'af/25'},
+        {name: 'Astrofo', value: 'af/26'},
+        {name: 'Mamerto es estupido', value: 'af/27'},
+        )
+    .setThumbnail(`https://cdn.discordapp.com/avatars/948807795795447868/096cc651df18ff4f4336fddcf7f3da12.webp`)
+
+    const HelpEmbedAudios7 = new discord.MessageEmbed()
+    .setColor('#4080ee')
+    .setTitle('Audios Pagina 7')
+    .setFields(
+        {name: 'El niño de medallo', value: 'af/28'},
+        {name: 'nonono', value: 'af/29'},
+        {name: 'Esooo', value: 'af/30'},
+        {name: 'Jajaja (sarcasmo)', value: 'af/31'},
+        )
+    .setThumbnail(`https://cdn.discordapp.com/avatars/948807795795447868/096cc651df18ff4f4336fddcf7f3da12.webp`)
+
+
 
 
     const ButtonsReactAudios = new discord.MessageActionRow()
+
         .addComponents(
 
             new discord.MessageButton()
@@ -982,7 +1276,7 @@ client.on('messageCreate', async (message) =>{
             .setLabel('->')
             .setStyle('SUCCESS'),
         )
-            // Segunda pagina
+
 
         const ButtonsReactAudios2Pag = new discord.MessageActionRow()
         .addComponents(
@@ -993,6 +1287,7 @@ client.on('messageCreate', async (message) =>{
             .setStyle('PRIMARY'),
         )  
 
+
         .addComponents(
 
             new discord.MessageButton()
@@ -1000,8 +1295,8 @@ client.on('messageCreate', async (message) =>{
             .setLabel('->')
             .setStyle('SUCCESS'),
         ) 
-        
-        // Tercera pagina
+
+
         const ButtonsReactAudios3Pag = new discord.MessageActionRow()
         .addComponents(
 
@@ -1011,6 +1306,7 @@ client.on('messageCreate', async (message) =>{
             .setStyle('PRIMARY'),
         )  
 
+
         .addComponents(
 
             new discord.MessageButton()
@@ -1019,7 +1315,8 @@ client.on('messageCreate', async (message) =>{
             .setStyle('SUCCESS'),
         ) 
 
-        // Cuarta Pagina
+
+
         const ButtonsReactAudios4Pag = new discord.MessageActionRow()
         .addComponents(
 
@@ -1029,6 +1326,7 @@ client.on('messageCreate', async (message) =>{
             .setStyle('PRIMARY'),
         )  
 
+
         .addComponents(
 
             new discord.MessageButton()
@@ -1036,6 +1334,7 @@ client.on('messageCreate', async (message) =>{
             .setLabel('->')
             .setStyle('SUCCESS'),
         ) 
+        
         const ButtonsReactAudios5Pag = new discord.MessageActionRow()
         .addComponents(
 
@@ -1044,6 +1343,39 @@ client.on('messageCreate', async (message) =>{
             .setLabel('<-')
             .setStyle('PRIMARY'),
         )  
+        
+        .addComponents(
+
+            new discord.MessageButton()
+            .setCustomId('Pagina6_Audios')
+            .setLabel('->')
+            .setStyle('SUCCESS'),
+        ) 
+
+        const ButtonsReactAudios6Pag = new discord.MessageActionRow()
+        .addComponents(
+            new discord.MessageButton()
+            .setCustomId('Pagina7_AudiosReturn')
+            .setLabel('<-')
+            .setStyle('PRIMARY')
+        )
+        .addComponents(
+            new discord.MessageButton()
+            .setCustomId('Pagina7_Audios')
+            .setLabel('->')
+            .setStyle('SUCCESS'),
+        )
+
+        const ButtonsReactAudios7Pag = new discord.MessageActionRow()
+        .addComponents(
+            new discord.MessageButton()
+            .setCustomId('Pagina8_AudiosReturn')
+            .setLabel('<-')
+            .setStyle('PRIMARY')
+        )
+
+        
+
 
 client.on('interactionCreate', interaction =>{
     if(!interaction.isButton()) return;
@@ -1058,23 +1390,18 @@ client.on('interactionCreate', interaction =>{
 
     //Audios
 
+        // Next Page
+
         if(interaction.customId === 'Audios'){
             interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios], components: [ButtonsReactAudios]});
         }
 
-        // Segunda pagina
         if(interaction.customId === 'Pagina2_Audios'){
              interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios2], components: [ButtonsReactAudios2Pag]}) 
             }
-        if(interaction.customId === 'Pagina3_AudiosReturn'){
-            interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios], components: [ButtonsReactAudios]}) 
-       }    
 
        if(interaction.customId === 'Pagina3_Audios'){
           interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios3], components: [ButtonsReactAudios3Pag]}) 
-        }
-        if(interaction.customId === 'Pagina4_AudiosReturn'){
-            interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios2], components: [ButtonsReactAudios2Pag]})
         }
 
         if(interaction.customId === 'Pagina4_Audios'){
@@ -1083,19 +1410,47 @@ client.on('interactionCreate', interaction =>{
         if(interaction.customId === 'Pagina5_Audios'){
             interaction.reply({content: null, ephemeral: true, embeds: [HelpEmbedAudios5], components: [ButtonsReactAudios5Pag] })
         }
+ 
+        if(interaction.customId === 'Pagina6_Audios'){
+            interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios6], components: [ButtonsReactAudios6Pag] })
+        }
+        if(interaction.customId === 'Pagina7_Audios'){
+            interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios7],components: [ButtonsReactAudios7Pag] })
+        }
+       // RETURNING
+
+
+        if(interaction.customId === 'Pagina3_AudiosReturn'){
+        interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios], components: [ButtonsReactAudios]}) 
+        }  
+
+        if(interaction.customId === 'Pagina4_AudiosReturn'){
+            interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios2], components: [ButtonsReactAudios2Pag]})
+        }
+        
         if(interaction.customId === 'Pagina5_AudiosReturn'){
             interaction.reply({content: null, ephemeral: true, embeds: [HelpEmbedAudios3], components: [ButtonsReactAudios3Pag]})
         }
         if(interaction.customId === 'Pagina6_AudiosReturn'){
             interaction.reply({content: null, ephemeral: true, embeds: [HelpEmbedAudios4], components: [ButtonsReactAudios4Pag]})
         }
-
+        if(interaction.customId === 'Pagina7_AudiosReturn'){
+            interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios5], components: [ButtonsReactAudios5Pag]})
+        }
+        if(interaction.customId === 'Pagina8_AudiosReturn'){
+            interaction.reply({ content: null, ephemeral: true, embeds: [HelpEmbedAudios6], components: [ButtonsReactAudios6Pag]})
+        }
 });
     
 
 client.login(config.token)
 
 
+
+
+//Notas
+
+console.log(config.pendientes)
 
 //    ____________
 
